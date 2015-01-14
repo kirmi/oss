@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="extjs/resources/ext-theme-classic/ext-theme-classic-all.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="extjs/ext-all.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function(){
+            Ext.create('Ext.panel.Panel', {
+                width: 300,
+                height: 150,
+                layout: {
+                    type: 'table',
+
+                    columns: 3
+                },
+                defaults: {
+                    bodyStyle: 'padding:20px'
+                },
+                items: [{
+                    html: '增加'
+                },{
+                    html: '修改'
+                },{
+                    html: '删除'
+                }],
+                renderTo: Ext.getBody()
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

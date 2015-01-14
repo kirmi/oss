@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+<!--供应商信息管理-->
+    <package name="default" extends="struts-default,json-default" namespace="/supplyer">
+
+        <!--供应商信息的添加-->
+        <action name="suplire" class="com.shinowit.action.SupplierAction" method="suplire">
+            <result type="json" name="ok"></result>
+        </action>
+        <!--供应商分页信息-->
+        <action name="querylist" class="com.shinowit.action.SupplierInfoAction" method="querylist">
+            <result type="json" name="ok">
+                <param name="excludeProperties">
+                    .*TMeInStockInfosBySupplierId
+                </param>
+            </result>
+        </action>
+        <!--供应商信息的删除-->
+        <action name="delsupply" class="com.shinowit.action.SupplyDeldateAction" method="delsupply">
+            <result type="json" name="del"></result>
+        </action>
+
+        <!--供应商信息的修改-->
+        <action name="supplyupdete" class="com.shinowit.action.SupplyUpdateAction" method="supplyupdete">
+            <result type="json" name="upchange"></result>
+        </action>
+    </package>
+
+<!--商品管理文件-->
+    <package name="goodsinfotion" extends="struts-default,json-default" namespace="/goodsinfo">
+
+        <!--商品的注册-->
+        <action name="mecinfo" class="com.shinowit.action.MerchandiseInfoAction" method="mecinfo">
+            <result type="json" name="ok"></result>
+        </action>
+
+        <!--商品修改-->
+        <action name="statuddel" class="com.shinowit.action.MerchangediseinfoUpdateAction" method="statuddel">
+            <result type="json" name="stsdel"></result>
+        </action>
+
+        <!--促销状态查询-->
+            <action name="Slistinfo" class="com.shinowit.action.StatusIAction" method="Slistinfo">
+            <result type="json" name="slist"></result>
+            </action>
+
+        <!--商品促销状态添加-->
+        <action name="statusinsert" class="com.shinowit.action.StatusInsertAction" method="statusinsert">
+            <result type="json" name="stai"></result>
+        </action>
+
+        <!--商品促销状态删除-->
+        <action name="statusdelinfo" class="com.shinowit.action.StatusDelAction" method="statusdelinfo">
+            <result type="json" name="staidel"></result>
+        </action>
+
+        <!--商品单位查询-->
+        <action name="UnitInfo" class="com.shinowit.action.UnitInfoListAction" method="UnitInfo">
+            <result type="json" name="list"></result>
+        </action>
+
+        <!--商品类别查询-->
+        <action name="listinfo" class="com.shinowit.action.MerCInfoListAction" method="listinfo">
+            <result type="json" name="merlist"></result>
+        </action>
+
+        <!--商品类别增加-->
+        <action name="temclainsrt" class="com.shinowit.action.MerCInfoInsetAction" method="temclainsrt">
+            <result type="json" name="tecls"></result>
+        </action>
+
+        <!--商品类别删除-->
+        <action name="temcladelect" class="com.shinowit.action.MerCInfoDelectAction" method="temcladelect">
+            <result type="json" name="teclsdsel"></result>
+        </action>
+
+        <!--商品类别修改-->
+        <action name="temclaupdate" class="com.shinowit.action.MerCInfoUpdatetAction" method="temclaupdate">
+            <result type="json" name="teclsudate"></result>
+        </action>
+
+        <!--商品信息展示-->
+        <action name="merchanquerylist" class="com.shinowit.action.MerchandiseListAction" method="merchanquerylist">
+            <result type="json" name="success">
+                <param name="excludeProperties">
+                   .*TMeInStockDetailsInfosByMerchandiseId,.*TMeOrderDetailsInfosByMerchandiseId,.*TMeOutStockDetailsInfosByMerchandiseId,.*TMeStockInfosByMerchandiseId
+                </param>
+            </result>
+        </action>
+
+        <!--商品查询-->
+        <action name="merinfo" class="com.shinowit.action.MerInfListAction" method="merinfo">
+            <result type="json" name="listm"></result>
+        </action>
+
+        <!--商品的删除-->
+        <action name="merchdelect" class="com.shinowit.action.MerchanDelAction" method="merchdelect">
+            <result type="json" name="merch"></result>
+        </action>
+
+        <!--商品信息的修改-->
+        <action name="upss" class="com.shinowit.action.MerchanUpAction" method="upss">
+            <result type="json" name="ups"></result>
+        </action>
+
+    </package>
+<!--库存信息管理-->
+    <package name="stockinfomation" extends="struts-default,json-default" namespace="/stocks">
+
+        <!--库存信息-->
+        <action name="StockInfo" class="com.shinowit.action.StockInfoListAction" method="StockInfo">
+            <result type="json" name="stocklist">
+                <param name="excludeProperties">
+                .*TMeInStockDetailsInfosByMerchandiseId,.*TMeMerchandiseCInfoByMerchandiseCid,.*TMeProStatusInfoByProStatusId,.*TMeUnitInfoByUnitId,.*TMeOrderDetailsInfosByMerchandiseId,.*TMeOutStockDetailsInfosByMerchandiseId,.*TMeStockInfosByMerchandiseId
+                </param>
+            </result>
+        </action>
+
+         <!--入库信息-->
+        <action name="liststock" class="com.shinowit.action.InStockInfoAction" method="liststock">
+            <result type="json" name="sto">
+                <param name="excludeProperties">
+                  .*TMeInStockDetailsInfosByBillCode,.*TAuRoleInfoByRoleId,.*TBaLogInfosByOperId,.*TMeInStockInfosByOperId,.*TMeOrderInfosByOperId,.*TMeOutStockInfosByOperId,.*TMeInStockInfosBySupplierId
+                </param>
+            </result>
+        </action>
+
+        <!--入库信息的删除-->
+
+        <action name="dellit" class="com.shinowit.action.InStockDelectAction" method="dellit">
+            <result type="json" name="ccli"></result>
+        </action>
+
+        <!--入库明细-->
+        <action name="instodellist" class="com.shinowit.action.InStockDetailsInfoAction" method="instodellist">
+            <result type="json" name="show">
+                <param name="excludeProperties">
+                    .*TMeInStockDetailsInfosByBillCode,.*TAuOperInfoByOperId,.*TBaSupplierInfoBySupplierId,.*TMeInStockDetailsInfosByMerchandiseId,.*TMeMerchandiseCInfoByMerchandiseCid,.*TMeProStatusInfoByProStatusId,.*TMeUnitInfoByUnitId,.*TMeOrderDetailsInfosByMerchandiseId,.*TMeOutStockDetailsInfosByMerchandiseId,.*TMeStockInfosByMerchandiseId
+                </param>
+            </result>
+        </action>
+
+        <!--入库明细信息的删除-->
+        <action name="deldetalit" class="com.shinowit.action.InStockDetalistDelectAction" method="deldetalit">
+            <result type="json" name="deta"></result>
+        </action>
+
+        <!--总体入库信息-->
+        <action name="instoreinfomation" class="com.shinowit.action.InstoreServiceAction" method="instoreinfomation">
+            <result type="json" name="ok"></result>
+        </action>
+
+         <!--入库信息的删除-->
+        <action name="delinstore" class="com.shinowit.action.InstoreServiceDelectAction" method="delinstore">
+            <result type="json" name="delinst"></result>
+        </action>
+
+        <!--入库信息的修改-->
+        <action name="instockup" class="com.shinowit.action.InStockUpdateSAction" method="instockup">
+            <result type="json" name="inslist"></result>
+        </action>
+
+    </package>
+<!--操作员的管理-->
+    <package name="common" extends="struts-default,json-default">
+    <interceptors>
+        <interceptor-stack name="mystack">
+            <interceptor-ref name="json"></interceptor-ref>
+
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </interceptor-stack>
+    </interceptors>
+    <default-interceptor-ref name="mystack"></default-interceptor-ref>
+</package>
+
+
+    <package name="operainfomation" extends="common" namespace="/oper">
+
+        <!--操作员信息-->
+        <action name="operinfolist" class="com.shinowit.action.OperInfoListAction" method="operinfolist">
+            <result type="json" name="operalist">
+                <param name="excludeProperties">
+                    .*TMeInStockInfosByOperId,.*TMeOrderInfosByOperId,.*TMeOutStockInfosByOperId
+                </param>
+            </result>
+        </action>
+
+        <!--操作员登陆-->
+        <action name="opercheck" class="com.shinowit.action.LoginAction" method="opercheck">
+            <result type="json" name="checkinfomation"></result>
+        </action>
+
+         <!--操作员信息的提交-->
+        <action name="operinfoinsert" class="com.shinowit.action.OperInfoInsertAction" method="operinfoinsert">
+                <result type="json" name="inope"></result>
+        </action>
+
+        <!--操作员信息的删除-->
+            <action name="operdel" class="com.shinowit.action.OperainfoDelectAction" method="operdel">
+                <result type="json" name="deloper"></result>
+            </action>
+
+        <!--操作员信息的修改-->
+        <action name="upoperdel" class="com.shinowit.action.OperainfoUpdateAction" method="upoperdel">
+            <result type="json" name="upoper"></result>
+        </action>
+
+        <!--菜单栏显示-->
+        <action name="mianmenu" class="com.shinowit.action.MenuInfoSelectAction" method="mianmenu">
+            <result type="json" name="mainlist"></result>
+        </action>
+
+            <!--菜单树-->
+                <action name="showtreelist" class="com.shinowit.action.TreeSelectAction" method="showtreelist">
+                <result type="json" name="treel"></result>
+            </action>
+
+            <!--首页树-->
+            <action name="indexshow" class="com.shinowit.action.IndexMenuListAction" method="indexshow">
+                <result type="json" name="indeslist"></result>
+            </action>
+
+            <!--权限的查看-->
+            <action name="selectshowtreelist" class="com.shinowit.action.TreeShowSelectAction" method="selectshowtreelist">
+                <result type="json" name="sstreel"></result>
+            </action>
+
+        <!--权限的修改-->
+        <action name="updaatelistmue" class="com.shinowit.action.NewUpdateRoleAction" method="updaatelistmue">
+            <result type="json" name="ok"></result>
+        </action>
+
+            <!--权限种类的添加-->
+            <action name="qunxiantianjia" class="com.shinowit.action.RoleInsertServiceAction" method="qunxiantianjia">
+                <result type="json" name="okli"></result>
+            </action>
+
+        </package>
+<!--出库操作信息-->
+    <package name="outstock" extends="struts-default,json-default" namespace="/outstock">
+
+        <!--操作员信息-->
+        <action name="outstockinsertlist" class="com.shinowit.action.InStockUpdateSAction" method="outstockinsertlist">
+            <result type="json" name="outstocklist"></result>
+        </action>
+
+        <!--（出库信息表）信息查询-->
+            <action name="outlist" class="com.shinowit.action.OutStockInfolistAction" method="outlist">
+            <result type="json" name="outinfoist">
+                <param name="excludeProperties">
+                    .*TMeOrderInfosByOutBillCode,*.TMeOutStockDetailsInfosByOutBillCode,.*TAuOperInfoByOperId,.*TMeInStockDetailsInfosByMerchandiseId,.*TMeOrderDetailsInfosByMerchandiseId,.*TMeOutStockDetailsInfosByMerchandiseId,.*TMeStockInfosByMerchandiseId, .*TAuRoleInfoByRoleId,.*TBaLogInfosByOperId,.*TMeInStockInfosByOperId,.*TMeOrderInfosByOperId,.*TMeOutStockInfosByOperId
+                </param>
+            </result>
+        </action>
+
+        <!--(出库明细信息表)信息查询-->
+        <action name="listoktdetal" class="com.shinowit.action.OutStockDetailsInfolist" method="listoktdetal">
+            <result type="json" name="list">
+                <param name="excludeProperties">
+                    .*TMeInStockDetailsInfosByMerchandiseId,.*TMeMerchandiseCInfoByMerchandiseCid,.*TMeProStatusInfoByProStatusId,.*TMeUnitInfoByUnitId,.*TMeOrderDetailsInfosByMerchandiseId,.*TMeOutStockDetailsInfosByMerchandiseId,.*TMeStockInfosByMerchandiseId,.*TMeOrderInfosByOutBillCode,.*TMeOutStockDetailsInfosByOutBillCode,.* TAuOperInfoByOperId
+                </param>
+            </result>
+        </action>
+
+        <!--出库信息删除-->
+        <action name="outstockdel" class="com.shinowit.action.OutStockDelServiceAction" method="outstockdel">
+            <result type="json" name="outstock"></result>
+        </action>
+
+        <!--出库信息的修改-->
+        <action name="outstocklist" class="com.shinowit.action.OutStockInfoupdateServiceAction" method="outstocklist">
+            <result type="json" name="okups"></result>
+        </action>
+
+        <!--出库明细信息的删除-->
+
+        <action name="outdetadel" class="com.shinowit.action.OutStockdetaDelAction" method="outdetadel">
+            <result type="json" name="dtael"></result>
+        </action>
+
+        <!--出库信息删除-->
+        <action name="outstockdel" class="com.shinowit.action.OutStockInfoDelAction" method="outstockdel">
+            <result type="json" name="outsdel"></result>
+        </action>
+    </package>
+    <!--操作员相关操作-->
+    <package name="role" extends="struts-default,json-default" namespace="/role">
+
+        <action name="roleinfomation" class="com.shinowit.action.RoleInfoListAction" method="roleinfomation">
+            <result type="json" name="rol">
+                <param name="excludeProperties">
+                    TAuAuthorizationsByRoleId,.*TAuOperInfosByRoleId
+                </param>
+            </result>
+        </action>
+
+        <!--操作员种类添加-->
+        <action name="roleinsert" class="com.shinowit.action.RoelInsAction" method="roleinsert">
+            <result type="json" name="inserre"></result>
+        </action>
+
+        <!--操作员种类删除-->
+        <action name="roledel" class="com.shinowit.action.RoelDelectAction" method="roledel">
+            <result type="json" name="delere"></result>
+        </action>
+
+        <!--操作员种类修改-->
+        <action name="roleupdinfoa" class="com.shinowit.action.RoelUpdateAction" method="roleupdinfoa">
+            <result type="json" name="updarelo"></result>
+        </action>
+
+    </package>
+
+<!--物流公司-->
+    <package name="deliverly" extends="struts-default,json-default" namespace="/deliverly">
+        <action name="deliverlistinfo" class="com.shinowit.action.DeliveryInfoListAction" method="deliverlistinfo">
+            <result type="json" name="deliverlist"></result>
+        </action>
+    </package>
+</struts>

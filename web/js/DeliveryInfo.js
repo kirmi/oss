@@ -1,0 +1,48 @@
+Ext.define("js.DeliveryInfo",{
+    extend:"Ext.grid.Panel",
+    initComponent:function(){
+        var me =this;
+        //创建数据源
+        var deliverstore=Ext.create("Ext.data.Store",{
+            autoLoad:false,
+            fields:["deliveryId","id","deliveryName","address","linkName","linkTel","qq","email","sortId","state",""],
+            pageSize:2,
+            proxy:{
+                type:"Ajax",
+                url:"/deliverly/deliverlistinfo",
+                reader:{
+                    type:'json',
+                    root:"deliver",
+                    totalProperty:"rows"
+                }
+            }
+        });
+        deliverstore.Load(
+            {
+                params:{
+                    start:0,
+                    limit:2
+                }
+            }
+        );
+        Ext.apply(this,{
+            title:"物流信",
+            store:deliverstore,
+            width:1000,
+            columns:[
+                {header:"递增的流水号",dataIndex:""},
+                {header:"配送商编码",dataIndex:""},
+                {header:"配送商名称",dataIndex:""},
+                {header:"地址",dataIndex:""},
+                {header:"联系人",dataIndex:""},
+                {header:"联系电话",dataIndex:""},
+                {header:"QQ",dataIndex:""},
+                {header:"Email",dataIndex:""},
+                {header:"",dataIndex:""},
+                {header:"",dataIndex:""}
+
+            ]
+        });
+        this.callParent()
+    }
+});

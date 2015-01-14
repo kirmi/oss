@@ -1,0 +1,290 @@
+{
+  "node": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 16,
+              "menuId": 16,
+              "menuName": "供应商管理",
+              "model": "js.SupplySelect",
+              "parentid": 4,
+              "src": "images\/left\/gongyingshang.jpg",
+              "tag": "SupplySelect"
+            }
+          }
+        ],
+        "leaf": false,
+        "menu": {
+          "id": 1,
+          "menuId": 4,
+          "menuName": "供应商管理",
+          "model": null,
+          "parentid": null,
+          "src": null,
+          "tag": null
+        }
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 14,
+              "menuId": 14,
+              "menuName": "入库信息",
+              "model": "js.jinhuo",
+              "parentid": 1,
+              "src": "images\/left\/ruku.jpg",
+              "tag": "jinhuoinfoshow"
+            }
+          },
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 15,
+              "menuId": 15,
+              "menuName": "库存管理",
+              "model": "js.Instore",
+              "parentid": 1,
+              "src": "images\/left\/kucun.jpg",
+              "tag": "instoreinfoshow"
+            }
+          }
+        ],
+        "leaf": false,
+        "menu": {
+          "id": 1,
+          "menuId": 1,
+          "menuName": "入库管理",
+          "model": null,
+          "parentid": null,
+          "src": null,
+          "tag": null
+        }
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 10,
+              "menuId": 10,
+              "menuName": "出库信息",
+              "model": "js.OutStocklist",
+              "parentid": 2,
+              "src": "images\/left\/chuku.jpg",
+              "tag": "outstocklistinfoshow"
+            }
+          },
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 13,
+              "menuId": 13,
+              "menuName": "商品出库单",
+              "model": "js.OutStockInfo",
+              "parentid": 2,
+              "src": "images\/left\/chukuguanli.jpg",
+              "tag": "outstockinfoshowlist"
+            }
+          }
+        ],
+        "leaf": false,
+        "menu": {
+          "id": 1,
+          "menuId": 2,
+          "menuName": "出库管理",
+          "model": null,
+          "parentid": null,
+          "src": null,
+          "tag": null
+        }
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 17,
+              "menuId": 17,
+              "menuName": "商品信息",
+              "model": "js.MerchandiseInfoShow",
+              "parentid": 3,
+              "src": "images\/left\/shangpin.jpg",
+              "tag": "findcode"
+            }
+          }
+        ],
+        "leaf": false,
+        "menu": {
+          "id": 1,
+          "menuId": 3,
+          "menuName": "商品管理",
+          "model": null,
+          "parentid": null,
+          "src": null,
+          "tag": null
+        }
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 11,
+              "menuId": 11,
+              "menuName": "促销状态",
+              "model": "js.Stashow",
+              "parentid": 5,
+              "src": "images\/left\/cuxiao.jpg",
+              "tag": "statusinfomation"
+            }
+          },
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 12,
+              "menuId": 12,
+              "menuName": "商品类别",
+              "model": "js.Merchanc",
+              "parentid": 5,
+              "src": "images\/left\/shangpinleibei.jpg",
+              "tag": "merchanclass"
+            }
+          },
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 20,
+              "menuId": 20,
+              "menuName": "计量单位",
+              "model": "js.Unitinfo",
+              "parentid": 5,
+              "src": "images\/left\/jiliangdanwei.jpg",
+              "tag": "unitinf"
+            }
+          }
+        ],
+        "leaf": false,
+        "menu": {
+          "id": 1,
+          "menuId": 5,
+          "menuName": "字典表管理",
+          "model": null,
+          "parentid": null,
+          "src": null,
+          "tag": null
+        }
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 21,
+              "menuId": 21,
+              "menuName": "操作员     ",
+              "model": "js.OperInfoshow",
+              "parentid": 6,
+              "src": "images\/left\/caozuoyuanguanli.jpg",
+              "tag": "jsoperinfostoreshow"
+            }
+          }
+        ],
+        "leaf": false,
+        "menu": {
+          "id": 1,
+          "menuId": 6,
+          "menuName": "操作员管理",
+          "model": null,
+          "parentid": null,
+          "src": null,
+          "tag": null
+        }
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 18,
+              "menuId": 18,
+              "menuName": "会员",
+              "model": null,
+              "parentid": 7,
+              "src": "images\/left\/huiyuan.jpg",
+              "tag": null
+            }
+          }
+        ],
+        "leaf": false,
+        "menu": {
+          "id": 1,
+          "menuId": 7,
+          "menuName": "会员管理",
+          "model": null,
+          "parentid": null,
+          "src": null,
+          "tag": null
+        }
+      },
+      {
+        "children": [],
+        "leaf": true,
+        "menu": {
+          "id": 1,
+          "menuId": 8,
+          "menuName": "物流管理",
+          "model": null,
+          "parentid": null,
+          "src": null,
+          "tag": null
+        }
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "leaf": true,
+            "menu": {
+              "id": 19,
+              "menuId": 19,
+              "menuName": "订单",
+              "model": null,
+              "parentid": 9,
+              "src": "images\/left\/dingdan.jpg",
+              "tag": null
+            }
+          }
+        ],
+        "leaf": false,
+        "menu": {
+          "id": 1,
+          "menuId": 9,
+          "menuName": "订单管理",
+          "model": null,
+          "parentid": null,
+          "src": null,
+          "tag": null
+        }
+      }
+    ],
+    "leaf": false,
+    "menu": null
+  },
+  "success": true
+}
